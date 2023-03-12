@@ -50,13 +50,39 @@
 #define LTM(k1)   &lt MEDIA k1
 #define LTF(k1)   &lt FN k1
 
+// -----------------------------------------------------------------------------------------
+// define Home-row modifiers
+#define HRML(k1,k2,k3,k4) &kp k1 &ht LCTRL k2 &ht LALT k3 &ht LMETA  k4
+#define HRMR(k1,k2,k3,k4) &ht RMETA  k1 &ht RALT  k2 &ht RCTRL  k3 &kp k4
+#define HRL &kp LSHIFT &kp LCTRL &kp LALT &kp LMETA
+#define HRR &kp RMETA &kp RALT &kp RCTRL &kp RSHIFT
 
 
 // -----------------------------------------------------------------------------------------
 
+// define Hold-tap properties
+#define TAPPING_TERM_MS 175
+#define QUICK_TAP_MS 150
+
+// define Combos properties
+#define TIMEOUT_MS 40
+#define TIMEOUT_MS_SLOW 100
+
 
 / { 
-
+// -----------------------------------------------------------------------------------------
+        behaviors {
+// -----------------------------------------------------------------------------------------
+        ht: hold_tap {
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
 
         keymap {
                 compatible = "zmk,keymap";
