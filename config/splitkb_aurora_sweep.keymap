@@ -581,37 +581,37 @@
         };
         combo_at { // @
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <2 14>;
+            key-positions = <1 11>;
             bindings = <&kp AT>;
         };
         combo_grave { // `
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <14 26>;
+            key-positions = <11 21>;
             bindings = <&kp GRAVE>;
         };
         combo_hash {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <03 15>;
+            key-positions = <02 12>;
             bindings = <&kp HASH>;
         };
         combo_bslh {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <15 27>;
+            key-positions = <12 22>;
             bindings = <&kp BSLH>;
         };
         combo_amps { // &
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <4 16>;
+            key-positions = <3 13>;
             bindings = <&kp AMPS>;
         };
         combo_pipe { // |
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <16 28>;
+            key-positions = <13 23>;
             bindings = <&kp PIPE>;
         };
         combo_prcnt { // %
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <5 17>;
+            key-positions = <5 14>;
             bindings = <&kp PRCNT>;
         };
         combo_tilde { // ~
