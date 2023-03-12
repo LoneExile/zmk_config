@@ -68,6 +68,11 @@
 #define TIMEOUT_MS 40
 #define TIMEOUT_MS_SLOW 100
 
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+};
+
 // -----------------------------------------------------------------------------------------
 // define MOUSE properties
 
