@@ -187,6 +187,105 @@
             keep-mods = <(MOD_RSFT)>;
         };
     };
+// -----------------------------------------------------------------------------------------
+// MORPH NUM LAYER
+        excl_1: excl_1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXCL_1";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp N1>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        star_2: star_2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "STAR_1";
+            #binding-cells = <0>;
+            bindings = <&kp STAR>, <&kp N2>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        at_3: at_3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AT_3";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&kp N3>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        equal_4: equal_4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EQUAL_4";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp N4>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        prcnt_5: prcnt_5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PRCNT_5";
+            #binding-cells = <0>;
+            bindings = <&kp PRCNT>, <&kp N5>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        dllr_6: dllr_6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DLLR_6";
+            #binding-cells = <0>;
+            bindings = <&kp DLLR>, <&kp N6>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        amps_7: amps_7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AMPS_7";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp N7>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        hash_8: hash_8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HASH_8";
+            #binding-cells = <0>;
+            bindings = <&kp HASH>, <&kp N8>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        grave_9: grave_9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GRAVE_9";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp N9>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+//       lpar_rpar: lpar_rpar {
+//           compatible = "zmk,behavior-mod-morph";
+//           label = "LPAR_RPAR";
+//           #binding-cells = <0>;
+//           bindings = <&kp LPAR>, <&kp RPAR>;
+//           mods = <(MOD_LSFT|MOD_RSFT)>;
+//           keep-mods = <(MOD_RSFT)>;
+//       };
+        plus_0: plus_0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUS_0";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp N0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        caret_tilde: caret_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CARET_TILDE";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+// -----------------------------------------------------------------------------------------
 
 // -----------------------------------------------------------------------------------------
         keymap {
