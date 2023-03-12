@@ -120,8 +120,75 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+// -----------------------------------------------------------------------------------------
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+        htbd: ht_bspc_del {
+            label = "hold_tap_bspc_del";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap;
+            bindings = <&mo>, <&bspc_del>;
+        };
+
+        lpar_rpar: lpar_rpar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAR_RPAR";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+// -----------------------------------------------------------------------------------------
+        htst: ht_space_tab {
+            label = "hold_tap_space_tab";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap;
+            bindings = <&mo>, <&space_tab>;
+        };
+        space_tab: space_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+
+        htest: ht_esc_stab {
+            label = "hold_tap_esc_stab";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap;
+            bindings = <&mo>, <&esc_stab>;
+        };
+        esc_stab: esc_stab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ESC_STAB";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp LS(TAB)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
     };
 
+// -----------------------------------------------------------------------------------------
         keymap {
                 compatible = "zmk,keymap";
 
