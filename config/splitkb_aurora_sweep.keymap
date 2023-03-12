@@ -19,58 +19,12 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-&led_strip {
-    chain-length = <23>;
+&mt {
+  //  flavor = "tap-preferred";
+   // tapping_term_ms = <200>;
 };
 
-// -----------------------------------------------------------------------------------------
-// define layout
-
-#define LINUX  0
-
-#define XXX &none
-
-// -----------------------------------------------------------------------------------------
-// define Layer-tap
-
-// -----------------------------------------------------------------------------------------
-// define Home-row modifiers
-#define HRML(k1,k2,k3,k4) &kp k1 &ht LCTRL k2 &ht LALT k3 &ht LMETA  k4
-#define HRMR(k1,k2,k3,k4) &ht RMETA  k1 &ht RALT  k2 &ht RCTRL  k3 &kp k4
-#define HRL &kp LSHIFT &kp LCTRL &kp LALT &kp LMETA
-#define HRR &kp RMETA &kp RALT &kp RCTRL &kp RSHIFT
-
-&sk {
-    release-after-ms = <1000>;
-    quick-release;
-};
-
-// -----------------------------------------------------------------------------------------
-// define Hold-tap properties
-#define TAPPING_TERM_MS 175
-#define QUICK_TAP_MS 150
-
-// define Combos properties
-#define TIMEOUT_MS 40
-#define TIMEOUT_MS_SLOW 100
-
-
-// -----------------------------------------------------------------------------------------
 / { 
-// -----------------------------------------------------------------------------------------
-        behaviors {
-// -----------------------------------------------------------------------------------------
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-// -----------------------------------------------------------------------------------------
 
     combos {
         compatible = "zmk,combos";
@@ -123,9 +77,36 @@
 		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U  &kp I    &kp O   &kp P 
 		&kp A &kp S &kp D &kp F &kp G 			        	        &kp H &kp J &kp K &kp L &kp QUOT
 		&mt LSFT Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-          				xxx &kp LCTL  				&kp SPC xxx 
+          				&mo 1 &kp LCTL  				&kp SPC &mo 2 
 		>;
 		};
+
+       		left_layer {
+		bindings = <
+		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
+		&kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH 		&kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL 
+		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL 
+					    &mo 1  &kp LGUI  					&kp RGUI &mo 2 
+		>;
+		};
+
+		right_layer {
+		bindings = <
+		&kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT    			&kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN 
+		&kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN 			&kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
+		&kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH    			&kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
+					  &mo 3 &kp LCTL  				&kp SPC  &mo 2 
+		>;
+		};	
+
+		tri_layer {
+		bindings = <
+		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5 			&trans &trans   &trans   &trans  &trans
+		&kp F1 &kp F2 &kp F3 &kp F4 &kp F5  						&trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
+		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7   				&trans &kp PG_DN  &kp K_VOL_DN  &trans &trans   
+					 &trans &trans  					&trans &trans 
+		>;
+		};	
 
 	};
 };
