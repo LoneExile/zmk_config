@@ -551,32 +551,32 @@
 // COMBOS LEFT
         combo_esc {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
             bindings = <&kp ESC>;
         };
         combo_repeat {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <1 2>;
+            key-positions = <0 1>;
             bindings = <&key_repeat>;
         };
         combo_lshift {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <14 15>;
+            key-positions = <11 12>;
             bindings = <&sk LSHIFT>;
         };
         combo_ret {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <15 16>;
+            key-positions = <12 13>;
             bindings = <&kp RET>;
         };
         combo_tab {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <3 4>;
+            key-positions = <2 3>;
             bindings = <&kp TAB>;
         };
         combo_stab {
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <4 05>;
+            key-positions = <3 4>;
             bindings = <&kp LS(TAB)>;
         };
         combo_at { // @
