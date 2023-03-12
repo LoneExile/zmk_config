@@ -23,7 +23,7 @@
     chain-length = <23>;
 };
 
-
+/ {
 keymap {
     compatible = "zmk,keymap";
 
