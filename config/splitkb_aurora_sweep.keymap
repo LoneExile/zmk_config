@@ -31,7 +31,7 @@
 #define MEDIA   5
 #define FN      6
 #define MOUSE   7
-#define CONTROL 8
+#define CTL     8
 #define NAV     9
 
 #define XXX &none
@@ -935,19 +935,19 @@
 // -----------------------------------------------------------------------------------------
                         label = "CTL";
                         bindings = <
-//   ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-//   │   X      │   X      │   X      │   X      │   X      │   │   ESC    │   X      │  MOVE_UP │   X      │   X      │
-        XXX        XXX        XXX        XXX        XXX            &kp ESC     XXX       U_MS_U      XXX        XXX
-//   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//   │   X      │   X      │   X      │   X      │   X      │   │   X      │ MOVE_LEFT│ MOVE_DOWN│MOVE_RIGHT│   X      │
-        HRL                                         XXX            XXX        U_MS_L    U_MS_D     U_MS_R       XXX
-//   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//   │   X      │   X      │   X      │   X      │   X      │   │   X      │  PG_DN   │  PG_UP   │   X      │   X      │
-        XXX        XXX        XXX        XXX        XXX             XXX      &kp PG_DN  &kp PG_UP    XXX        XXX
-//   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
+//   ╭──────────────────┬─────────────────┬──────────────────┬──────────────────┬──────────────────╮  ╭──────────────┬─────────────┬──────────────┬──────────────┬──────────────╮
+//   │    RGB_TOG       │     X           │    RGB_HUI       │   RGB_HUD        │     X            │  │    BT_PRV    │   BT_PRV    │    BT_NXT    │   BT_NXT     │   BT_CLR     │
+        &rgb_ug RGB_TOG      XXX             &rgb_ug RGB_HUI     &rgb_ug RGB_HUD     XXX                  &bt BT_PRV    &bt BT_PRV     &bt BT_NXT     &bt BT_NXT     &bt BT_CLR
+//   ├──────────────────┼─────────────────┼──────────────────┼──────────────────┼──────────────────┤  ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
+//   │    RGB_EFF       │    RGB_SAD      │    RGB_BRI       │     RGB_BRD      │   RGB_SAI        │  │   BEHAVIOR   │    RMETA    │    RALT      │     RCTRL    │   RSHIFT     │
+        &rgb_ug RGB_EFF   &rgb_ug RGB_SAD   &rgb_ug RGB_BRI    &rgb_ug RGB_BRD    &rgb_ug RGB_SAI      &out OUT_TOG    &kp RMETA      &kp RALT      &kp RCTRL     &kp RSHIFT
+//   ├──────────────────┼─────────────────┼──────────────────┼──────────────────┼──────────────────┤  ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
+//   │    RGB_EFR       │    X            │   RGB_SPI        │    RGB_SPD       │     X            │  │   BT_SEL 1   │  BT_SEL 2   │   BT_SEL 3   │   BT_SEL 4   │   BT_SEL 5   │
+        &rgb_ug RGB_EFR     XXX              &rgb_ug RGB_SPI    &rgb_ug RGB_SPD      XXX                &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 5
+//   ╰──────────────────┴─────────────────┴──────────────────┴──────────────────┴──────────────────╯  ╰──────────────┴─────────────┴──────────────┴──────────────┴──────────────╯
 //                    ╭─────────────┬─────────────┬────────────╮   ╭────────────┬──────────────┬─────────────╮
-//                    │            │    NAV     │   │   LCLICK   │    RCLICK    │    MCLICK   │
-                                       &mo NAV          U_BTN1        U_BTN2         U_BTN3
+//                    │            │      X      │    NAV     │   │     X      │      X       │            │
+                                       XXX         &mo NAV           XXX           XXX            
 //                    ╰─────────────┴─────────────┴────────────╯   ╰────────────┴──────────────┴─────────────╯
                         >;
                 };
@@ -959,13 +959,13 @@
                         bindings = <
 //   ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
 //   │  BASE    │   THAI   │  MOUSE   │  MEDIA   │  FN      │   │  REDO    │  PASTE   │  COPY    │  CUT     │  UNDO    │
-       &to LINUX  &to THAI  &to MOUSE   &to MEDIA  &to FN        &kp K_REDO &kp K_PASTE &kp K_COPY &kp K_CUT &kp K_UNDO
+      &tog LINUX &tog THAI  &tog MOUSE &tog MEDIA &tog FN        &kp K_REDO &kp K_PASTE &kp K_COPY &kp K_CUT &kp K_UNDO
 //   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //   │  LSHIFT  │  LCTRL   │  LALT    │  LMETA   │  NUM     │   │  LEFT    │  DOWN    │    UP    │  RIGHT   │  CAPS    │
          HRL                                       &tog NUM        &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT &caps_word
 //   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//   │  X       │  X       │  X       │  X       │    X     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
-       XXX         XXX        XXX        XXX          XXX         &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &kp INS
+//   │  X       │  X       │  X       │  X       │  CTL     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
+       XXX         XXX        XXX        XXX       &tog CTL       &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &kp INS
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                    ╭─────────────┬─────────────┬────────────╮   ╭────────────┬──────────────┬─────────────╮
 //                    │            │      X      │      X     │   │     X      │       X      │            │
