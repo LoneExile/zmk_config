@@ -34,17 +34,97 @@
 
 #define XXX &none
 
+// -----------------------------------------------------------------------------------------
+// turn on LED/key
+
 &led_strip {
     chain-length = <23>;
 };
-&mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
+
+// -----------------------------------------------------------------------------------------
+// define Layer-tap
+
+#define LTS(k1)   &lt SYM k1
+#define LTN(k1)   &lt NAV k1
+#define LTNUM(k1) &lt NUM k1
+#define LTM(k1)   &lt MEDIA k1
+#define LTF(k1)   &lt FN k1
+
+// -----------------------------------------------------------------------------------------
+// define Home-row modifiers
+#define HRML(k1,k2,k3,k4) &kp k1 &ht LCTRL k2 &ht LALT k3 &ht LMETA  k4
+#define HRMR(k1,k2,k3,k4) &ht RMETA  k1 &ht RALT  k2 &ht RCTRL  k3 &kp k4
+#define HRL &kp LSHIFT &kp LCTRL &kp LALT &kp LMETA
+#define HRR &kp RMETA &kp RALT &kp RCTRL &kp RSHIFT
+
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
 };
+
+// -----------------------------------------------------------------------------------------
+// define MOUSE properties
+
+#define U_MOUSE_MOVE_MAX 1250
+#define U_MOUSE_MOVE_EXPONENT 1
+#define U_MOUSE_MOVE_TIME 1500
+#define U_MOUSE_MOVE_DELAY 0
+
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+
+#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+
+&mmv {
+  acceleration-exponent = <U_MOUSE_MOVE_EXPONENT>;
+  time-to-max-speed-ms = <U_MOUSE_MOVE_TIME>;
+  delay-ms = <U_MOUSE_MOVE_DELAY>;
+};
+
+#define U_BTN1 &mkp MB1
+#define U_BTN2 &mkp MB2
+#define U_BTN3 &mkp MB3
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_MS_U &mmv MOVE_UP
+
+// -----------------------------------------------------------------------------------------
+
+// define Hold-tap properties
+#define TAPPING_TERM_MS 175
+#define QUICK_TAP_MS 150
+
+// define Combos properties
+#define TIMEOUT_MS 40
+#define TIMEOUT_MS_SLOW 100
+
+// -----------------------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------------------
 
 
 / { 
+// -----------------------------------------------------------------------------------------
+        behaviors {
+// -----------------------------------------------------------------------------------------
+        ht: hold_tap {
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
 
+// -----------------------------------------------------------------------------------------
 
         keymap {
                 compatible = "zmk,keymap";
