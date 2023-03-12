@@ -68,6 +68,38 @@
 #define TIMEOUT_MS 40
 #define TIMEOUT_MS_SLOW 100
 
+// -----------------------------------------------------------------------------------------
+// define MOUSE properties
+
+#define U_MOUSE_MOVE_MAX 1250
+#define U_MOUSE_MOVE_EXPONENT 1
+#define U_MOUSE_MOVE_TIME 1500
+#define U_MOUSE_MOVE_DELAY 0
+
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+
+#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+
+&mmv {
+  acceleration-exponent = <U_MOUSE_MOVE_EXPONENT>;
+  time-to-max-speed-ms = <U_MOUSE_MOVE_TIME>;
+  delay-ms = <U_MOUSE_MOVE_DELAY>;
+};
+
+#define U_BTN1 &mkp MB1
+#define U_BTN2 &mkp MB2
+#define U_BTN3 &mkp MB3
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_MS_U &mmv MOVE_UP
+
 
 / { 
 // -----------------------------------------------------------------------------------------
