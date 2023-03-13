@@ -617,7 +617,7 @@
         };
         combo_prcnt { // %
             timeout-ms = <TIMEOUT_MS>;
-            key-positions = <5 14>;
+            key-positions = <4 14>;
             bindings = <&kp PRCNT>;
         };
         combo_tilde { // ~
@@ -936,8 +936,8 @@
                         label = "CTL";
                         bindings = <
 //   ╭──────────────────┬─────────────────┬──────────────────┬──────────────────┬──────────────────╮  ╭──────────────┬─────────────┬──────────────┬──────────────┬──────────────╮
-//   │    RGB_TOG       │     X           │    RGB_HUI       │   RGB_HUD        │     X            │  │    BT_PRV    │   BT_PRV    │    BT_NXT    │   BT_NXT     │   BT_CLR     │
-        &rgb_ug RGB_TOG      XXX             &rgb_ug RGB_HUI     &rgb_ug RGB_HUD     XXX                  &bt BT_PRV    &bt BT_PRV     &bt BT_NXT     &bt BT_NXT     &bt BT_CLR
+//   │    RGB_TOG       │     X           │    RGB_HUI       │   RGB_HUD        │     reset        │  │    reset     │   BT_PRV    │    BT_NXT    │     X        │   BT_CLR     │
+        &rgb_ug RGB_TOG      XXX             &rgb_ug RGB_HUI     &rgb_ug RGB_HUD     &reset               &reset        &bt BT_PRV     &bt BT_NXT      XXX          &bt BT_CLR
 //   ├──────────────────┼─────────────────┼──────────────────┼──────────────────┼──────────────────┤  ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
 //   │    RGB_EFF       │    RGB_SAD      │    RGB_BRI       │     RGB_BRD      │   RGB_SAI        │  │   BEHAVIOR   │    RMETA    │    RALT      │     RCTRL    │   RSHIFT     │
         &rgb_ug RGB_EFF   &rgb_ug RGB_SAD   &rgb_ug RGB_BRI    &rgb_ug RGB_BRD    &rgb_ug RGB_SAI      &out OUT_TOG    &kp RMETA      &kp RALT      &kp RCTRL     &kp RSHIFT
@@ -959,7 +959,7 @@
                         bindings = <
 //   ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
 //   │  BASE    │   THAI   │  MOUSE   │  MEDIA   │  FN      │   │  REDO    │  PASTE   │  COPY    │  CUT     │  UNDO    │
-      &tog LINUX &tog THAI  &tog MOUSE &tog MEDIA &tog FN        &kp K_REDO &kp K_PASTE &kp K_COPY &kp K_CUT &kp K_UNDO
+      &to LINUX  &tog THAI  &tog MOUSE &tog MEDIA &tog FN        &kp K_REDO &kp K_PASTE &kp K_COPY &kp K_CUT &kp K_UNDO
 //   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //   │  LSHIFT  │  LCTRL   │  LALT    │  LMETA   │  NUM     │   │  LEFT    │  DOWN    │    UP    │  RIGHT   │  CAPS    │
          HRL                                       &tog NUM        &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT &caps_word
