@@ -608,16 +608,16 @@
             key-positions = <17 29>;
             bindings = <&kp TILDE>;
         };
-        combo_undo {
-            timeout-ms = <TIMEOUT_MS>;
-            key-positions = <16 17>;
-            bindings = <&kp LC(Z)>;
-        };
-        combo_redo {
-            timeout-ms = <TIMEOUT_MS>;
-            key-positions = <28 29>;
-            bindings = <&kp LC(LS(Z))>;
-        };
+//       combo_undo {
+//           timeout-ms = <TIMEOUT_MS>;
+//           key-positions = <16 17>;
+//           bindings = <&kp LC(Z)>;
+//       };
+//       combo_redo {
+//           timeout-ms = <TIMEOUT_MS>;
+//           key-positions = <28 29>;
+//           bindings = <&kp LC(LS(Z))>;
+//       };
 //       combo_z {
 //           timeout-ms = <TIMEOUT_MS_SLOW>;
 //           key-positions = <13 14>;
