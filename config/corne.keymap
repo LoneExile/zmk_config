@@ -556,6 +556,11 @@
         compatible = "zmk,combos";
 
 // COMBOS LEFT
+        combo_ctlA {
+            timeout-ms = <TIMEOUT_MS>;
+            key-positions = <13 14>;
+            bindings = <&kp LC(A)>;
+        };
         combo_esc {
             timeout-ms = <TIMEOUT_MS>;
             key-positions = <2 3>;
