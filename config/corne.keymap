@@ -140,6 +140,24 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
+
+        lbrc_rbrc: lbrc_rbrc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBRC_RBRC";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+
+        lbkt_rbkt: lbkt_rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBKT_RBKT";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
 // -----------------------------------------------------------------------------------------
         htst: ht_space_tab {
             label = "hold_tap_space_tab";
@@ -668,7 +686,7 @@
         combo_lbrc {
             timeout-ms = <TIMEOUT_MS>;
             key-positions = <7 8>;
-            bindings = <&kp LBRC>;
+            bindings = <&lbrc_rbrc>;
         };
 //       combo_rbrc {
 //           timeout-ms = <TIMEOUT_MS>;
@@ -688,13 +706,13 @@
         combo_lbkt {
             timeout-ms = <TIMEOUT_MS>;
             key-positions = <31 32>;
-            bindings = <&kp LBKT>;
+            bindings = <&lbkt_rbkt>;
         };
-        combo_rbkt {
-            timeout-ms = <TIMEOUT_MS>;
-            key-positions = <32 33>;
-            bindings = <&kp RBKT>;
-        };
+//       combo_rbkt {
+//           timeout-ms = <TIMEOUT_MS>;
+//           key-positions = <32 33>;
+//           bindings = <&kp RBKT>;
+//       };
         combo_dllr {
             timeout-ms = <TIMEOUT_MS>;
             key-positions = <9 21>;
