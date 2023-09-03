@@ -553,7 +553,7 @@
         pscrn_custom: pscrn_custom {
             label = "pscrn_custom";
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings
                 = <&kp PSCRN>
                 , <&to LINUX>
