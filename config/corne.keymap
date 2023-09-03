@@ -555,7 +555,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp PSCRN &to LINUX>
+                = <&kp PSCRN>
+                , <&to LINUX>
                 ;
         };
     };
