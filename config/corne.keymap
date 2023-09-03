@@ -113,12 +113,6 @@
         };
 
 // -----------------------------------------------------------------------------------------
-        pscrn_custom: pscrn_custom {
-            compatible = "zmk,behavior-keymap";
-            label = "PSCRN_CUSTOM";
-            #binding-cells = <0>;
-            bindings = <&kp PSCRN>, <&to LINUX>;
-        };
 
         bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
@@ -555,6 +549,16 @@
                 , <&macro_release &kp TAB>
                 ;
         };
+
+        pscrn_custom: pscrn_custom {
+            label = "pscrn_custom";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp PSCRN>
+                , <&macro_tap &to LINUX >
+                ;
+        };
     };
 
 // -----------------------------------------------------------------------------------------
@@ -904,7 +908,7 @@
                         bindings = <
 //      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────────┬─────────────┬──────────────┬──────────────┬──────────────╮
 //      │   F12    │    F7    │    F8    │    F9    │  PSCRN   │   │    BT_PRV    │   BT_PRV    │    BT_NXT    │   BT_NXT     │   BT_CLR     │
-   XXX    &kp F12    &kp F7     &kp F8     &kp F9  &kp PSCRN  &bt BT_PRV    &bt BT_PRV     &bt BT_NXT     &bt BT_NXT     &bt BT_CLR     XXX
+   XXX    &kp F12    &kp F7     &kp F8     &kp F9  &kp pscrn_custom  &bt BT_PRV    &bt BT_PRV     &bt BT_NXT     &bt BT_NXT     &bt BT_CLR     XXX
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
 //      │   F11    │    F4    │    F5    │    F6    │  NUMLOCK │   │   BEHAVIOR   │    RMETA    │    RALT      │     RCTRL    │   RSHIFT     │
    XXX    &kp F11    &kp F4     &kp F5     &kp F6   &kp KP_NLCK      &out OUT_TOG    &kp RMETA      &kp RALT      &kp RCTRL     &kp RSHIFT      XXX
