@@ -957,8 +957,8 @@
 //      │  LSHIFT  │  LCTRL   │  LALT    │  LMETA   │  NUM     │   │  LEFT    │  DOWN    │    UP    │  RIGHT   │  CAPS    │
    XXX      HRL                                       &tog NUM        &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT &caps_word  XXX 
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//      │  X       │  X       │  X       │  X       │    X     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
-   XXX    XXX         XXX        XXX        XXX          XXX         &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &kp INS    XXX
+//      │  X       │  X       │  X       │  X       │  NAV     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
+   XXX    XXX         XXX        XXX        XXX       &tog NAV       &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &kp INS    XXX
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                    ╭─────────────┬─────────────┬────────────╮   ╭────────────┬──────────────┬─────────────╮
 //                    │      X      │      X      │      X     │   │     X      │       X      │     X       │
