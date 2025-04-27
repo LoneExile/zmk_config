@@ -22,14 +22,13 @@
 // Layer definitions
 #define LINUX   0
 #define MAC     1
-#define THAI    2
+#define NAV     2
 #define SYM     3
 #define NUM     4
 #define MEDIA   5
 #define FN      6
 #define MOUSE   7
-#define CTL     8
-#define NAV     9
+#define THAI    8
 
 #define XXX &none
 
@@ -773,7 +772,7 @@
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                 ╭─────────────┬─────────────┬────────────╮   ╭────────────┬──────────────┬─────────────╮
 //                 │    X        │ SPACE/NUM   │  NAV       │   │    X       │   BSPC       │      X      │
-                               LTNUM(SPACE)   LTN(SPACE)            XXX         &bspc_del         
+                               LTNUM(SPACE)   &mo NAV            XXX         &bspc_del         
 //                 ╰─────────────┴─────────────┴────────────╯   ╰────────────┴──────────────┴─────────────╯
                      >;
              };
