@@ -546,10 +546,10 @@
        &to LINUX   XXX        XXX       &to MEDIA  &to FN        &kp K_REDO &kp K_PASTE &kp K_COPY &kp K_CUT &kp K_UNDO
 //   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //   │  LSHIFT  │  LCTRL   │  LALT    │  LMETA   │  NUM     │   │  LEFT    │  DOWN    │    UP    │  RIGHT   │  CAPS    │
-         HRL                                       &tog NUM        &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT &caps_word
+         HRL                                       &to  NUM        &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT &caps_word
 //   ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //   │  X       │  X       │  X       │  X       │    X     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
-       XXX         XXX        XXX        XXX       &tog NAV       &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &kp INS
+       XXX         XXX        XXX        XXX       &to  NAV       &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &kp INS
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
 //                                │      X      │      X     │   │     X       │     X       │
