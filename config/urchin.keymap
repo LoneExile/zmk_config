@@ -22,6 +22,8 @@
 #define CTL     8
 #define NAV     9
 
+#define XXX &none
+
 // -----------------------------------------------------------------------------------------
 // define Layer-tap
 #define LTS(k1)   &lt SYM k1
