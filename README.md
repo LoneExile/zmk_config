@@ -60,10 +60,14 @@ drag (a screenshot selection, say) can cover more than one trackpad width.
 | Two fingers moving | scroll |
 | Pinch | zoom (Ctrl −/=) |
 | Finger still for 0.5 s, then move | drag, until the finger lifts (use an outer thumb for longer drags) |
-| Three-finger swipe | Ctrl+Cmd+arrow (beekeeb's default) |
+| Three fingers up | Mission Control (⌃↑) |
+| Three fingers down | App Exposé (⌃↓) |
+| Three fingers left / right | OmniWM focus one column right / left (⌥→ / ⌥←): the columns follow your fingers |
 | Moving while NAV is active | scroll |
 
-The trackpad settings come from beekeeb's shield (`toucan_right.overlay`), pinned in
+Each three-finger swipe sends one shortcut, at most one every 1.2 s; the mapping is
+`&swipe_button_mapper` at the end of `toucan/toucan.keymap`. The other trackpad
+settings come from beekeeb's shield (`toucan_right.overlay`), pinned in
 `toucan/west.yml`. Smooth scrolling on the Mac is LinearMouse, in the dotfiles.
 
 ### Flashing

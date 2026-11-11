@@ -695,3 +695,14 @@ XXX        &kp F10    &kp F1     &kp F2     &kp F3  &kp PAUSE_BREAK   &bt BT_SEL
 &zip_zoom_mapper {
     bindings = <&kp LC(MINUS)>, <&kp LC(EQUAL)>;
 };
+
+// Three-finger swipes, like this Mac's own trackpad (OmniWM scrolls columns with
+// three fingers; four fingers up/down are Mission Control / App Exposé there).
+// One shortcut per swipe; the column follows the fingers, as on a MacBook.
+// codes order (toucan.dtsi): NORTH (up), EAST (right), SOUTH (down), WEST (left)
+&swipe_button_mapper {
+    bindings = <&kp LC(UP)>,     // up: Mission Control
+               <&kp LA(LEFT)>,   // right: OmniWM focus.left
+               <&kp LC(DOWN)>,   // down: App Exposé (application windows)
+               <&kp LA(RIGHT)>;  // left: OmniWM focus.right
+};
