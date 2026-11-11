@@ -1,0 +1,33 @@
+# Toucan2 is built separately from config/ (urchin): its trackpad driver and
+# 144x168 display shield target ZMK v0.3, and beekeeb's display shield is also
+# named nice_view_gem, which would clash with M165437/nice-view-gem used there.
+# Mirrors https://github.com/beekeeb/zmk-keyboard-toucan2/blob/main/config/west.yml
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: beekeeb
+      url-base: https://github.com/beekeeb
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3
+      import: app/west.yml
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: v0.3
+    - name: zmk_driver_azoteq
+      remote: beekeeb
+      revision: main
+    - name: zmk-input-zoom
+      remote: beekeeb
+      revision: main
+    # toucan shield + toucan's nice_view_gem display; pinned so an upstream
+    # move to ZMK main cannot break this v0.3 build.
+    - name: zmk-keyboard-toucan2
+      remote: beekeeb
+      revision: 6882c95bec5be89988e90feb621f78a7511e9ed7
+  self:
+    path: toucan
