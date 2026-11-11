@@ -1,0 +1,121 @@
+# keymap-drawer config for toucan/toucan.keymap. Regenerate the diagram with
+#   uv run keymap-drawer/draw.py
+draw_config:
+  dark_mode: auto
+parse_config:
+  zmk_keycode_map:
+    # keymap-drawer's defaults: a map here replaces them, so they are repeated.
+    EXCLAMATION: '!'
+    EXCL: '!'
+    AT_SIGN: '@'
+    AT: '@'
+    HASH: '#'
+    POUND: '#'
+    DOLLAR: $
+    DLLR: $
+    PERCENT: '%'
+    PRCNT: '%'
+    CARET: ^
+    AMPERSAND: '&'
+    AMPS: '&'
+    ASTERISK: '*'
+    ASTRK: '*'
+    STAR: '*'
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    EQUAL: '='
+    PLUS: +
+    MINUS: '-'
+    UNDERSCORE: _
+    UNDER: _
+    SLASH: /
+    FSLH: /
+    QUESTION: '?'
+    QMARK: '?'
+    BACKSLASH: \
+    BSLH: \
+    PIPE: '|'
+    NON_US_BACKSLASH: \
+    PIPE2: '|'
+    NON_US_BSLH: '|'
+    SEMICOLON: ;
+    SEMI: ;
+    COLON: ':'
+    SINGLE_QUOTE: ''''
+    SQT: ''''
+    APOSTROPHE: ''''
+    APOS: ''''
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    COMMA: ','
+    LESS_THAN: <
+    LT: <
+    PERIOD: .
+    DOT: .
+    GREATER_THAN: '>'
+    GT: '>'
+    LEFT_BRACKET: '['
+    LBKT: '['
+    LEFT_BRACE: '{'
+    LBRC: '{'
+    RIGHT_BRACKET: ']'
+    RBKT: ']'
+    RIGHT_BRACE: '}'
+    RBRC: '}'
+    GRAVE: '`'
+    TILDE: '~'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    TILDE2: '~'
+    # Ours.
+    BACKSPACE: BSPC
+    DELETE: DEL
+    RET: ENTER
+    LSHIFT: SHIFT
+    RSHIFT: SHIFT
+    LCTRL: CTRL
+    RCTRL: CTRL
+    LALT: ALT
+    RALT: ALT
+    LMETA: META
+    RMETA: META
+    C_BRIGHTNESS_INC: BRI +
+    C_BRIGHTNESS_DEC: BRI −
+    C_VOL_UP: VOL +
+    C_VOL_DN: VOL −
+    C_PREV: PREV
+    C_NEXT: NEXT
+    C_MUTE: MUTE
+    C_PP: PLAY
+    C_REWIND: RWND
+    C_FAST_FORWARD: FFWD
+    KP_NLCK: NUM LOCK
+    PAUSE_BREAK: BREAK
+  raw_binding_map:
+    "&caps_word": CAPS WORD
+    "&mkp LCLK": L CLICK
+    "&mkp MCLK": M CLICK
+    "&mkp RCLK": R CLICK
+    "&bootloader": {t: BOOT, h: this half}
+    "&pscrn_custom": {t: PSCRN, h: then base}
+    "&bt BT_SEL 0": BT 1
+    "&bt BT_SEL 1": BT 2
+    "&bt BT_SEL 2": BT 3
+    "&bt BT_SEL 3": BT 4
+    "&bt BT_SEL 4": BT 5
+    "&bt BT_PRV": BT PREV
+    "&bt BT_NXT": BT NEXT
+    "&bt BT_CLR": BT CLEAR
+    "&out OUT_TOG": USB / BT
+    "&to 0": {t: BASE, h: to}
+    "&to 1": {t: NAV, h: to}
+    "&to 3": {t: NUM, h: to}
+    "&to 4": {t: MEDIA, h: to}
+    "&to 5": {t: FN, h: to}
+    "&tog 1": {t: NAV, h: toggle}
+  zmk_combos:
+    # X+V would sit on top of copy (X+C) and paste (C+V); W+E+R on top of esc (W+E).
+    combo_cut: {align: bottom}
+    combo_tab: {align: top}
