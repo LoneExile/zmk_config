@@ -8,8 +8,10 @@
 
     The firmware matrix has 42 positions (3x6+3 per side). The 36-key build has no
     outer pinky column (00/11, 12/23, 24/35), so every row wraps urchin's 10 keys
-    in XXX. Urchin's 2 thumbs per side sit on Toucan's middle+inner thumbs; the
-    outer thumbs (36, 41) only act as mouse buttons on the MOUSE layer.
+    in XXX. Urchin's 2 thumbs per side sit on Toucan's middle+inner thumbs. The
+    outer thumbs (36, 41) are left click on every layer: tap to click, hold to
+    drag. A held outer thumb stays pressed while the finger is lifted and put
+    back on the trackpad (ZMK releases a key on the layer it was pressed on).
     The ASCII boxes inside each layer still show urchin's 5 columns.
 
                               KEY POSITIONS
@@ -546,7 +548,7 @@ XXX        &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N     
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                               ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
 //                               │ SPACE/NUM   │  NAV       │   │    X        │      X      │
-XXX                                    LTNUM(SPACE)   &mo NAV           XXX         &bspc_del  XXX
+&mkp LCLK                              LTNUM(SPACE)   &mo NAV           XXX         &bspc_del  &mkp LCLK
 //                               ╰─────────────┴────────────╯   ╰─────────────┴─────────────╯
                      >;
              };
@@ -568,7 +570,7 @@ XXX        XXX         XXX        XXX        XXX      &tog  NAV       &kp HOME  
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
 //                                │      X      │      X     │   │     X       │     X       │
-XXX                                        XXX           XXX             XXX           XXX  XXX
+&trans                                     XXX           XXX             XXX           XXX  &trans
 //                                ╰─────────────┴────────────╯   ╰─────────────┴─────────────╯
                         >;
                 };
@@ -590,7 +592,7 @@ XXX        XXX         XXX        XXX        XXX        XXX            &plus_0  
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                               ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
 //                               │      X      │     X      │   │     X       │      X      │
-XXX                                        XXX         XXX              XXX           XXX  XXX
+&trans                                     XXX         XXX              XXX           XXX  &trans
 //                               ╰─────────────┴────────────╯   ╰─────────────┴─────────────╯
                      >;
              };
@@ -611,7 +613,7 @@ XXX        XXX         XXX        XXX        XXX        XXX           &kp N0    
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                               ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
 //                               │      X      │    NAV     │   │     X       │      X      │
-XXX                                        XXX        &to LINUX          XXX        &bspc_del  XXX
+&trans                                     XXX        &to LINUX          XXX        &bspc_del  &trans
 //                               ╰─────────────┴────────────╯   ╰─────────────┴─────────────╯
                      >;
              };
@@ -633,7 +635,7 @@ XXX        XXX         XXX        XXX        XXX        XXX             &kp C_RE
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰─────────────────┴──────────────────────┴─────────────────────┴────────────────┴────────────────╯
 //                               ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                               │    X        │    NAV     │   │  Mute      │  Play/Pause │
-XXX                                      XXX         &to LINUX        &kp C_MUTE     &kp C_PP  XXX
+&trans                                   XXX         &to LINUX        &kp C_MUTE     &kp C_PP  &trans
 //                               ╰─────────────┴────────────╯   ╰─────────────┴────────────╯
                      >;
              };
@@ -655,7 +657,7 @@ XXX        &kp F10    &kp F1     &kp F2     &kp F3  &kp PAUSE_BREAK   &bt BT_SEL
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────────┴─────────────┴──────────────┴──────────────┴──────────────╯
 //                               ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
 //                               │      X      │    NAV     │   │     X       │      X      │
-XXX                                        XXX         &to LINUX         XXX            XXX  XXX
+&trans                                     XXX         &to LINUX         XXX            XXX  &trans
 //                               ╰─────────────┴────────────╯   ╰─────────────┴─────────────╯
                      >;
              };
@@ -664,13 +666,14 @@ XXX                                        XXX         &to LINUX         XXX    
              mouse_layer {
 // --------------------------------------------------------------------------------------
                      // Held by the trackpad while it is touched (is_touching_processor
-                     // below). Toucan stock layout: thumbs become mouse buttons.
+                     // below). Thumbs read like a mouse on both sides:
+                     // outer = left, middle = middle, inner = right.
                      label = "MOUSE";
                      bindings = <
        &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
        &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
        &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
-                      &mkp MCLK &mkp LCLK &mkp RCLK    &mkp LCLK &mkp RCLK &mkp MCLK
+                      &mkp LCLK &mkp MCLK &mkp RCLK    &mkp RCLK &mkp MCLK &mkp LCLK
                      >;
              };
 
