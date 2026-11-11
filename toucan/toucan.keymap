@@ -643,6 +643,9 @@ XXX        XXX         XXX        XXX        XXX        XXX             &kp C_RE
 // --------------------------------------------------------------------------------------
              fn_layer {
 // --------------------------------------------------------------------------------------
+                     // Middle thumbs: bootloader for the half they sit on (ZMK runs
+                     // &bootloader on the pressing half). Flash the right half first:
+                     // once the left half is in its bootloader the right is unreachable.
                      label = "FN";
                      bindings = <
 //   ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────────┬─────────────┬──────────────┬──────────────┬──────────────╮
@@ -656,8 +659,8 @@ XXX        &kp F11    &kp F4     &kp F5     &kp F6   &kp KP_NLCK      &out OUT_T
 XXX        &kp F10    &kp F1     &kp F2     &kp F3  &kp PAUSE_BREAK   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4  XXX
 //   ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────────┴─────────────┴──────────────┴──────────────┴──────────────╯
 //                               ╭─────────────┬────────────╮   ╭─────────────┬─────────────╮
-//                               │      X      │    NAV     │   │     X       │      X      │
-&trans                                     XXX         &to LINUX         XXX            XXX  &trans
+//                               │ BOOTLOADER  │    NAV     │   │     X       │ BOOTLOADER  │
+&trans                               &bootloader       &to LINUX         XXX       &bootloader  &trans
 //                               ╰─────────────┴────────────╯   ╰─────────────┴─────────────╯
                      >;
              };
