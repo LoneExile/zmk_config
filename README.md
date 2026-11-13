@@ -42,13 +42,17 @@ drag (a screenshot selection, say) can cover more than one trackpad width.
 ### Layers
 
 - **LINUX** (base): home-row mods on S D F and J K L (Ctrl, Alt, Meta).
-- **Combos** work on every layer; the diagram draws them in a panel of their own.
+- **Combos** work on every layer (except the MOUSE exit below); the diagram draws
+  them in a panel of their own.
 - **NAV**: hold the left inner thumb, or press the right inner and middle thumbs
   together to stay in it. From NAV: Q goes back to base, R to MEDIA, T to FN,
   G to NUM, and B leaves NAV.
 - **NUM**: hold Space, or NAV then G.
 - **MEDIA** and **FN**: reached from NAV; the left inner thumb goes back to base.
 - **MOUSE**: on while a finger is on the trackpad (thumbs become mouse buttons).
+  If it stays on after you lift the finger (a lost finger-up), press **both
+  middle thumbs together** to go back to base; touching and lifting the
+  trackpad once also clears it.
 - **SYM** is defined, as in the urchin keymap, but no key switches to it.
 
 ### Trackpad

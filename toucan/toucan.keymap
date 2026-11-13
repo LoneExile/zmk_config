@@ -526,6 +526,15 @@
             key-positions = <39 40>;
             bindings = <&to NAV>;
         };
+        // Escape hatch: if the trackpad's finger-up is lost, MOUSE stays on and
+        // every thumb is a click. Both middle thumbs together go back to base.
+        // Only while MOUSE is the top layer, so typing Space+Bksp never fires it.
+        combo_exit_mouse {
+            timeout-ms = <TIMEOUT_MS_SLOW>;
+            key-positions = <37 40>;
+            layers = <MOUSE>;
+            bindings = <&to LINUX>;
+        };
     };
 // -----------------------------------------------------------------------------------------
         keymap {

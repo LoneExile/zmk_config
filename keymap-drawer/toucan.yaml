@@ -584,3 +584,11 @@ combos:
     h: to
   l:
   - COMBOS (every layer)
+- p:
+  - 31
+  - 34
+  k:
+    t: BASE
+    h: to
+  l:
+  - MOUSE

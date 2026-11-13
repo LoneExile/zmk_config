@@ -1510,6 +1510,13 @@ path.combo { stroke: #7f7f7f; }
 <tspan x="0" dy="-0.6em">L</tspan><tspan x="0" dy="1.2em">CLICK</tspan>
 </text>
 </g>
+<g class="combo combopos-0">
+<path d="M336,209 l-88,0" class="combo"/>
+<path d="M336,209 l88,0" class="combo"/>
+<rect rx="6" ry="6" x="322" y="196" width="28" height="26" class="combo"/>
+<text x="336" y="209" class="combo tap">BASE</text>
+<text x="336" y="220" class="combo hold">to</text>
+</g>
 </g>
 </g>
 </svg>
