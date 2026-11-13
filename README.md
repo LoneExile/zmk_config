@@ -72,7 +72,16 @@ drag (a screenshot selection, say) can cover more than one trackpad width.
 Each three-finger swipe sends one shortcut, at most one every 1.2 s; the mapping is
 `&swipe_button_mapper` at the end of `toucan/toucan.keymap`. The other trackpad
 settings come from beekeeb's shield (`toucan_right.overlay`), pinned in
-`toucan/west.yml`. Smooth scrolling on the Mac is LinearMouse, in the dotfiles.
+`toucan/west.yml`.
+
+Scroll speed is tuned on the Mac, not in the firmware: LinearMouse
+(`home/linearmouse/linearmouse.json` in the dotfiles) has a Toucan-only scheme
+with smoothed scrolling, acceleration 0 (scroll speed proportional to finger
+speed) and inertia 0.3. Adjust Speed and Inertia there. If slow scrolling is still
+too fast at Speed 0, the firmware can send fewer scroll steps: beekeeb's
+`toucan.dtsi` sets `&zip_scroll_scaler 1 20` (20 trackpad counts per step) in
+`&trackpad_listener`; override its `input-processors` in `toucan/toucan.keymap`
+with a larger divisor, and re-flash the left half.
 
 ### Flashing
 
